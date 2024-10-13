@@ -44,6 +44,6 @@ public class Triangle : IShape
         double sideB = sides[1];
         double hypotenuse = sides[2];
 
-        return Math.Abs(hypotenuse * hypotenuse - (sideA * sideA + sideB * sideB)) <= Epsilon;
+        return Math.Abs(1 - (sideA * sideA + sideB * sideB) / (hypotenuse * hypotenuse)) <= Epsilon;
     }
 }
