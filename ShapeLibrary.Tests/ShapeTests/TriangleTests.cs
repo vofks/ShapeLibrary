@@ -103,7 +103,7 @@ public class TriangleTests
     }
 
     [Fact]
-    public void Triangle_IsRight_ReturnsCorrectValue()
+    public void Triangle_IsRight_ReturnsTrueOnRightTriangle()
     {
         double sideA = 3;
         double sideB = 5;
@@ -113,5 +113,18 @@ public class TriangleTests
         bool isRight = triangle.IsRight();
 
         isRight.Should().BeTrue();
+    }
+
+    [Fact]
+    public void Triangle_IsRight_ReturnsFalseOnRegularTriangle()
+    {
+        double sideA = 3;
+        double sideB = 5;
+        double sideC = 9;
+        var triangle = new Triangle(sideA, sideB, sideC);
+
+        bool isRight = triangle.IsRight();
+
+        isRight.Should().BeFalse();
     }
 }
