@@ -16,7 +16,7 @@ public class CircleTests
     }
 
     [Fact]
-    public void Circle_Circle_ThrowsInvalidArgumentExceptionOnZeroAndNegativeValues()
+    public void Circle_Circle_ThrowsInvalidArgumentExceptionOnZeroOrNegativeValues()
     {
         var act = () => new Circle(0);
 
