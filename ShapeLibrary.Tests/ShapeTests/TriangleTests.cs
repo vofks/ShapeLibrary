@@ -26,7 +26,7 @@ public class TriangleTests
     [Fact]
     public void Triangle_Triangle_ThrowsInvalidArgumentExceptionOnInvalidTriangleSides()
     {
-        var act = () => new Triangle(2, 2, 2);
+        var act = () => new Triangle(1, 1, 3);
 
         act.Should().Throw<ArgumentException>();
     }
@@ -120,7 +120,7 @@ public class TriangleTests
     {
         double sideA = 3;
         double sideB = 5;
-        double sideC = 9;
+        double sideC = 7;
         var triangle = new Triangle(sideA, sideB, sideC);
 
         bool isRight = triangle.IsRight();
