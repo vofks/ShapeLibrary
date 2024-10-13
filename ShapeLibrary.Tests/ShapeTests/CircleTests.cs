@@ -6,36 +6,53 @@ namespace ShapeLibrary.Tests.ShapeTests;
 
 public class CircleTests
 {
-    [Fact]
-    public void Circle_Circle_CreatesCircleInstance()
+    [Theory]
+    [InlineData(1.0)]
+    [InlineData(5)]
+    [InlineData(10e1)]
+    [InlineData(10e-3)]
+    public void Circle_Circle_CreatesCircleInstance(double radius)
     {
-        var act = () => new Circle(1);
+        var act = () => new Circle(radius);
 
 
         act.Should().NotThrow();
     }
 
-    [Fact]
-    public void Circle_Circle_ThrowsInvalidArgumentExceptionOnZeroOrNegativeValues()
+    [Theory]
+    [InlineData(0)]
+    [InlineData(-1)]
+    [InlineData(-0.1)]
+    [InlineData(-1e-10)]
+    [InlineData(-double.MaxValue)]
+    public void Circle_Circle_ThrowsInvalidArgumentExceptionOnZeroOrNegativeValues(double radius)
     {
-        var act = () => new Circle(0);
+        var act = () => new Circle(radius);
 
         act.Should().Throw<ArgumentException>();
     }
 
-    [Fact]
-    public void Circle_Radius_ReturnsCorrectRadius()
+    [Theory]
+    [InlineData(1)]
+    [InlineData(0.1)]
+    [InlineData(1e-5)]
+    [InlineData(double.MaxValue)]
+    public void Circle_Radius_ReturnsCorrectRadius(double expectedRadius)
     {
-        double expectedRadius = 1;
         var circle = new Circle(expectedRadius);
 
         circle.Radius.Should().Be(expectedRadius);
     }
 
-    [Fact]
-    public void Circle_CalculateArea_ReturnsCorrectArea()
+    [Theory]
+    [InlineData(10)]
+    [InlineData(1)]
+    [InlineData(0.3333333333)]
+    [InlineData(10e-20)]
+    [InlineData(10e20)]
+    [InlineData(123141515516463437)]
+    public void Circle_CalculateArea_ReturnsCorrectArea(double radius)
     {
-        double radius = 3;
         double expectedArea = Math.PI * radius * radius;
         var circle = new Circle(radius);
 
