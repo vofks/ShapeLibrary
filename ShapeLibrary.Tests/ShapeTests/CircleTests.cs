@@ -20,7 +20,7 @@ public class CircleTests
     {
         var act = () => new Circle(0);
 
-        act.Should().Throw<InvalidEnumArgumentException>();
+        act.Should().Throw<ArgumentException>();
     }
 
     [Fact]

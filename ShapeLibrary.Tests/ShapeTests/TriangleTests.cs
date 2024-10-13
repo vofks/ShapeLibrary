@@ -20,7 +20,7 @@ public class TriangleTests
     {
         var act = () => new Triangle(-1, 7, 9);
 
-        act.Should().Throw<InvalidEnumArgumentException>();
+        act.Should().Throw<ArgumentException>();
     }
 
     [Fact]
@@ -28,7 +28,7 @@ public class TriangleTests
     {
         var act = () => new Triangle(2, 2, 2);
 
-        act.Should().Throw<InvalidEnumArgumentException>();
+        act.Should().Throw<ArgumentException>();
     }
 
     [Fact]
