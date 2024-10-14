@@ -13,11 +13,9 @@
 
 # Что сделано
 
-- Реализована библиотека ShapeLibrary, которая содержит два класса: [Circle](/ShapeLibrary/Circle.cs) и [Triangle](/ShapeLibrary/Triangle.cs).
+- Реализована библиотека ShapeLibrary, которая содержит классы [Circle](/ShapeLibrary/Circle.cs), [Triangle](/ShapeLibrary/Triangle.cs) и нтерфейс [IShape](/ShapeLibrary/IShape.cs).
 
-- В коде присутствует документация методов.
-
-- Интерфейс [IShape](/ShapeLibrary/IShape.cs)
+- Документация в коде.
 
 - Unit-тесты реализованы с ипользованием фреймворка xUnit и располагаются в проекте [ShapeLibrary.Tests](/ShapeLibrary.Tests/). Файлы [CircleTests.cs](/ShapeLibrary.Tests/ShapeTests/CircleTests.cs) и [TriangleTests.cs](/ShapeLibrary.Tests/ShapeTests/TriangleTests.cs) соответственно.
 
@@ -29,11 +27,11 @@
 
 ## Вычисление площади фигуры без знания типа фигуры в compile-time
 
-Я предположил, что необходимо опеределить универсальный для всех фигур интерфейс, который позволит вычислять площадь без занания конкретного типа. Для этого был создан интерфейс **IShape** с методом **CalculateArea()**, который возвращает площадь фигуры типа **double**.
+Я предположил, что необходимо определить универсальный для всех фигур интерфейс, который позволит вычислять площадь без занания конкретного типа. Для этого был создан интерфейс **IShape** с методом **CalculateArea()**, который возвращает площадь фигуры типа **double**.
 
 Предположим, что инициализация объектов фигур происходит где-то вне пользовательского кода. Пользователь получет сериализованные фигуры по сети при помощи клиенского интерфейса, в котором реализован метод **IEnumerable\<IShape\> GetShapes()**.
 
-Пример:
+## Пример:
 
 ```
 double sum = 0;
@@ -48,4 +46,27 @@ sum = 0;
 
 // Или с помощью LINQ
 sum = shapes.Sum(s => s.CalculateArea());;
+```
+
+## Добавление новых фигур
+
+Необходимо добавить класс, реализующий метод **CalculateArea()** интерфейса **IShape**.
+
+## Пример
+
+```
+class Rectangle : IShape
+{
+	public double Width { get; }
+	public double Height { get; }
+
+	public Rectangle(double width, double height) {
+        Width = width;
+		Height = height;
+    }
+
+	public double CalculateArea(){
+		return Width * Height;
+	}
+}
 ```
