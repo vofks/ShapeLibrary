@@ -23,6 +23,12 @@
 
 -   Библиотека собрана в NuGet пакет, опубликована и доступна по [ссылке](https://www.nuget.org/packages/Omgdev.Util.ShapeLibrary/1.0.0).
 
+    Добавить в проект можно при помощи команды:
+
+    ```powershell
+    dotnet add package Omgdev.Util.ShapeLibrary --version 1.0.0
+    ```
+
 # Решения
 
 ## Вычисление площади фигуры без знания типа фигуры в compile-time
@@ -33,7 +39,7 @@
 
 ## Пример:
 
-```
+```c#
 double sum = 0;
 IEnumerable<IShape> shapes = client.GetShapes();
 
@@ -55,13 +61,13 @@ sum = shapes.Sum(s => s.CalculateArea());;
 
 ## Пример
 
-```
+```c#
 class Rectangle : IShape
 {
-	public double Width { get; }
-	public double Height { get; }
+    public double Width { get; }
+    public double Height { get; }
 
-	public Rectangle(double width, double height)
+    public Rectangle(double width, double height)
     {
         Width = width;
         Height = height;
