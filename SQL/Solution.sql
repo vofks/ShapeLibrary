@@ -18,24 +18,24 @@ CREATE TABLE ProductCategories (
   	FOREIGN KEY (categoryId) REFERENCES Categories(id)
 )
 
-INSERT INTO Products 
-VALUES 
-  ('Macbook'), 
-  ('Samsung GALAXY Tab'), 
-  ('Bose QuietComfort'), 
-  ('Huawei Mate'), 
+INSERT INTO Products
+VALUES
+  ('Macbook'),
+  ('Samsung GALAXY Tab'),
+  ('Bose QuietComfort'),
+  ('Huawei Mate'),
   ('Sony TV'),
   ('Lawn mower'); -- Продукт, для которого нет категории
-  
+
 INSERT INTO Categories
-VALUES 
-  ('Electronics'), 
-  ('PCs'), 
-  ('Mobile devices'), 
-  ('Audio'), 
-  ('TVs'), 
+VALUES
+  ('Electronics'),
+  ('PCs'),
+  ('Mobile devices'),
+  ('Audio'),
+  ('TVs'),
   ('Projectors'); -- Категория, для которой нет продуктов
-  
+
 INSERT INTO ProductCategories
 VALUES
 	(1, 1),
@@ -48,7 +48,7 @@ VALUES
     (4, 3),
     (5, 1),
     (5, 5);
-    
-SELECT p.name AS PoductName, c.name AS CategoryName FROM Products AS p
+
+SELECT p.name AS ProductName, c.name AS CategoryName FROM Products AS p
 LEFT JOIN ProductCategories AS pc ON p.id = pc.productId
 LEFT JOIN Categories As c ON c.id = pc.categoryId;

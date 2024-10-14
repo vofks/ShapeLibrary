@@ -29,6 +29,8 @@
     dotnet add package Omgdev.Util.ShapeLibrary --version 1.0.0
     ```
 
+-   Решение SQL задачи представлено в файле [SQL/Solution.sql](/SQL/Solution.sql). Файл содержит запросы для создания схемы, заполнения таблиц данными и ответ к задаче. Быстро запустить можно, например, [тут](https://sqliteonline.com/).
+
 # Решения
 
 ## Вычисление площади фигуры без знания типа фигуры в compile-time
