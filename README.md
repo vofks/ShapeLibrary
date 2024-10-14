@@ -4,24 +4,24 @@
 
 1. Напишите на C# библиотеку для поставки внешним клиентам, которая умеет вычислять площадь круга по радиусу и треугольника по трем сторонам. Дополнительно к работоспособности оценим:
 
-   - Юнит-тесты
-   - Легкость добавления других фигур
-   - Вычисление площади фигуры без знания типа фигуры в compile-time
-   - Проверку на то, является ли треугольник прямоугольным
+    - Юнит-тесты
+    - Легкость добавления других фигур
+    - Вычисление площади фигуры без знания типа фигуры в compile-time
+    - Проверку на то, является ли треугольник прямоугольным
 
 2. В базе данных MS SQL Server есть продукты и категории. Одному продукту может соответствовать много категорий, в одной категории может быть много продуктов. Напишите SQL запрос для выбора всех пар «Имя продукта – Имя категории». Если у продукта нет категорий, то его имя все равно должно выводиться.
 
 # Что сделано
 
-- Реализована библиотека ShapeLibrary, которая содержит классы [Circle](/ShapeLibrary/Circle.cs), [Triangle](/ShapeLibrary/Triangle.cs) и нтерфейс [IShape](/ShapeLibrary/IShape.cs).
+-   Реализована библиотека ShapeLibrary, которая содержит классы [Circle](/ShapeLibrary/Circle.cs), [Triangle](/ShapeLibrary/Triangle.cs) и нтерфейс [IShape](/ShapeLibrary/IShape.cs).
 
-- Документация в коде.
+-   Документация в коде.
 
-- Unit-тесты реализованы с ипользованием фреймворка xUnit и располагаются в проекте [ShapeLibrary.Tests](/ShapeLibrary.Tests/). Файлы [CircleTests.cs](/ShapeLibrary.Tests/ShapeTests/CircleTests.cs) и [TriangleTests.cs](/ShapeLibrary.Tests/ShapeTests/TriangleTests.cs) соответственно.
+-   Unit-тесты реализованы с ипользованием фреймворка xUnit и располагаются в проекте [ShapeLibrary.Tests](/ShapeLibrary.Tests/). Файлы [CircleTests.cs](/ShapeLibrary.Tests/ShapeTests/CircleTests.cs) и [TriangleTests.cs](/ShapeLibrary.Tests/ShapeTests/TriangleTests.cs) соответственно.
 
-- Пример использования находится в проекте [Example](/Example/Program.cs)
+-   Пример использования находится в проекте [Example](/Example/Program.cs)
 
-- Библиотека собрана в NuGet пакет, опубликована и доступна по [ссылке]().
+-   Библиотека собрана в NuGet пакет, опубликована и доступна по [ссылке](https://www.nuget.org/packages/Omgdev.Util.ShapeLibrary/1.0.0).
 
 # Решения
 
@@ -38,7 +38,8 @@ double sum = 0;
 IEnumerable<IShape> shapes = client.GetShapes();
 
 // Находим сумму площадей всех полученных фигур
-foreach(var shape in shapes){
+foreach(var shape in shapes)
+{
     sum += shape.CalculateArea();
 }
 
@@ -66,9 +67,9 @@ class Rectangle : IShape
         Height = height;
     }
 
-	public double CalculateArea()
+    public double CalculateArea()
     {
-		return Width * Height;
-	}
+        return Width * Height;
+    }
 }
 ```
