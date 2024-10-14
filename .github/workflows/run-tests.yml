@@ -21,4 +21,4 @@ jobs:
       - name: Build
         run: dotnet build ./ShapeLibrary.sln --configuration Release --no-restore
       - name: Test
-        run: dotnet test ./ShapeLibrary.Tests/ShapeLibrary.Tests.csproj --no-build --verbosity normal
+        run: dotnet test ./ShapeLibrary.Tests/ShapeLibrary.Tests.csproj --configuration Release --no-build --verbosity normal
