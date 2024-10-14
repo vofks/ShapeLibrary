@@ -1,3 +1,5 @@
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/vofks/ShapeLibrary/run-tests.yml)
+
 # Тестовое задание на позицию C# Developer Middle в [Mindbox](https://mindbox.ru/)
 
 # Задание:
