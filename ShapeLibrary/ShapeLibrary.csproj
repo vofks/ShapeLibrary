@@ -8,8 +8,9 @@
     <Authors>Denis Ostapovich</Authors>
     <Description>Test task for Mindbox.
 Shapes area calculation library.</Description>
-    <Copyright>MIT</Copyright>
+    <Copyright>Denis Ostapovich 2024</Copyright>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>
