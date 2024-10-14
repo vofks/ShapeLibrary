@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>Omgdev.Util.ShapeLibrary</PackageId>
+    <Authors>Denis Ostapovich</Authors>
+    <Description>Test task for Mindbox.
+Shapes area calculation library.</Description>
+    <Copyright>Denis Ostapovich 2024</Copyright>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Title>ShapeLibrary</Title>
+    <RepositoryUrl>https://github.com/vofks/ShapeLibrary</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+        <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+</Project>
